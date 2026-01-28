@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Recipe Page</title>
+    </head>
+    <body>
+        <h2> Recipe page </h2>
+        <p>Recipe Name: {{ name }}</p>
+        <p>Recipe time: {{ time }}</p>
+        <p>Ingredients:</p>
+            {% for i in ingredients %}
+                <h3>{{ i }}</h3>
+            {% endfor %}
+
+            <h2> if</h2>
+            {% if time <= 30 %}
+                <h3> Quick Recipe </h3>
+            {% else %}
+                <h3> Regular Recipe </h3>
+            {% endif %}
+    </body>
+</html>

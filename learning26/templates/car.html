@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carlist</title>
+</head>
+<body>
+    <h1>carlist</h1>
+
+    {% for i in car %}
+        <h2>{{i}}</h2>
+    {% endfor %}
+    
+    <h2> if </h2>
+    {% if price <= 2000000 %}
+    <h3>u should buy this car</h2>
+        {% else %}
+    <h3>don`t buy this car</h3>
+    {% endif %}
+</body>
+</html>
