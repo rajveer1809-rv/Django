@@ -2,15 +2,14 @@ from django.shortcuts import render
 
 def studentmarks(request):
     student_data = {
-        'name': 'John Doe',
-        'marks': {
+            'name': 'John Doe',
             'Math': 85,
             'Science': 90,
             'History': 78,
             'English': 88
-        }
+        
     }
-    return render(request, 'student/studentmarks.html', {'student': student_data})
+    return render(request, 'student/studentmarks.html', {'marks': student_data})
 
 def studentaddress(request):
     address_data = {
