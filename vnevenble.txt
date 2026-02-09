@@ -1,2 +1,3 @@
 e:\projects\Django\learning26\venv\Scripts\activate
 
+cd Django\learning26
