@@ -1,9 +1,10 @@
+from django.http import HttpResponse
 from django.shortcuts import render
+from .forms import EmployeeForm, course1Form, schoolForm, gamesForm
 from .models import Employee
 
 
 def employeeList(request):
-    # select * from employee
     employees = Employee.objects.all()
     return render(request, "employee/employeeList.html", {"employees": employees})
 
@@ -29,6 +30,53 @@ def employeeFilter(request):
         "query17": Employee.objects.order_by("-age"),
         "query18": Employee.objects.order_by("-salary"),
     }
-    #print all queries
-    
+
     return render(request, "employee/employeeFilter.html", context)
+
+
+def employeeFormView(request):
+    if request.method == "POST":
+        form = EmployeeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Employee created successfully")
+    else:
+        form = EmployeeForm()
+
+    return render(request, "employee/employeeForm.html", {"form": form})
+
+
+def course1FormView(request):
+    if request.method == "POST":
+        form = course1Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Course created successfully")
+    else:
+        form = course1Form()
+
+    return render(request, "employee/course1Form.html", {"form": form})
+
+
+def schoolFormView(request):
+    if request.method == "POST":
+        form = schoolForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("School created successfully")
+    else:
+        form = schoolForm()
+
+    return render(request, "employee/schoolForm.html", {"form": form})
+
+
+def gamesFormView(request):
+    if request.method == "POST":
+        form = gamesForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Game created successfully")
+    else:
+        form = gamesForm()
+
+    return render(request, "employee/gamesForm.html", {"form": form})
