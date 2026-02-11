@@ -58,19 +58,19 @@ class services(models.Model):
     def __str__(self):
         return self.servicename
 
-class Employee(models.Model):
+class Employee1(models.Model):
     employeename = models.CharField(max_length=100)
     employeeage = models.IntegerField()
     employeecity = models.CharField(max_length=100)
     employeeemail = models.EmailField()
     
     class Meta:
-        db_table = 'employee'
+        db_table = 'employee1'
     def __str__(self):
         return self.employeename
 
 class Employeedetail(models.Model):
-    employee = models.OneToOneField(Employee,on_delete=models.CASCADE)
+    employee = models.OneToOneField(Employee1,on_delete=models.CASCADE)
     employeeaddress = models.CharField(max_length=200)
     employeequalification = models.CharField(max_length=100)
     employeeexperience = models.IntegerField()

@@ -32,4 +32,5 @@ urlpatterns = [
     path("car/",views.car),
 
     path('student/', include('student.urls')),
+    path('employee/', include('employee.urls')),
 ]
