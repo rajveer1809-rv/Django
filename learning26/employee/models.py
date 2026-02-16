@@ -12,7 +12,8 @@ class Employee(models.Model):
         db_table = "employee"
 
     def __str__(self):
-        return self.name
+        return str(self.name)
+
 
 class course1(models.Model):
     name = models.CharField(max_length=100)
@@ -23,8 +24,9 @@ class course1(models.Model):
         db_table = "course1"
 
     def __str__(self):
-        return self.name
-    
+        return str(self.name)
+
+
 class school(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
@@ -32,9 +34,11 @@ class school(models.Model):
 
     class Meta:
         db_table = "school"
+
     def __str__(self):
-        return self.name
-    
+        return str(self.name)
+
+
 class games(models.Model):
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
@@ -42,5 +46,6 @@ class games(models.Model):
 
     class Meta:
         db_table = "games"
+
     def __str__(self):
-        return self.name
+        return str(self.name)
