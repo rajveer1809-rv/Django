@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <h2>Service List</h2>
 
 <a href="{% url 'service_create' %}">Add Service</a>
@@ -6,12 +8,14 @@
     <tr>
         <th>Name</th>
         <th>Price</th>
+        <th>category</th>
         <th>Actions</th>
     </tr>
     {% for s in services %}
     <tr>
         <td>{{ s.name }}</td>
         <td>{{ s.price }}</td>
+        <td><span class="service-category">{{service.categoryId.categoryName}}</span></td>
         <td>
             <a href="{% url 'service_update' s.id %}">Edit</a>
             <a href="{% url 'service_delete' s.id %}">Delete</a>
@@ -19,3 +23,4 @@
     </tr>
     {% endfor %}
 </table>
+{% endblock content %}

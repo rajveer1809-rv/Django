@@ -1,6 +1,9 @@
-<h2>Service Form</h2>
-<form method="post">
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method = "POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
+    {{form|crispy}}
+    <input type="submit" value="Submit">
 </form>
+{% endblock %}

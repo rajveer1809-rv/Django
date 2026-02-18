@@ -12,6 +12,7 @@ class Service(models.Model):
 
     name = models.CharField(max_length=100)
     price = models.IntegerField()
+    categoryName = models.CharField(max_length=100,null=True)
 
     def __str__(self):
         return self.name
